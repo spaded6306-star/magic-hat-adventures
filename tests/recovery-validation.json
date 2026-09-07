@@ -1,0 +1,65 @@
+{
+  "recovery_date": "2026-09-07T09:10:15.650150",
+  "startup": {
+    "page": true,
+    "opening": true,
+    "mission_start": true,
+    "keyboard_movement": true,
+    "blocking_js_errors": []
+  },
+  "playthrough": {
+    "passed": true,
+    "log": [
+      "Opening: all eight beats and Mission Start",
+      "WASD, arrows and trail follower",
+      "Captain before gems, Space interaction, cabin reachable",
+      "Mission 1: all questions, physical chest visit, single gem/map reward, duplicate prevention",
+      "Mission 2: all questions, physical chest visit, single gem/map reward, duplicate prevention",
+      "Mission 3: all questions, physical chest visit, single gem/map reward, duplicate prevention",
+      "Mission 4: all questions, physical chest visit, single gem/map reward, duplicate prevention",
+      "Mission 5: all questions, physical chest visit, single gem/map reward, duplicate prevention",
+      "Mission 6: all questions, physical chest visit, single gem/map reward, duplicate prevention",
+      "Mission 7: all questions, physical chest visit, single gem/map reward, duplicate prevention",
+      "Mission 8: all questions, physical chest visit, single gem/map reward, duplicate prevention",
+      "Map reveal, final without scaffold, final treasure, ending complete",
+      "Reload resumes completed progress",
+      "Play Again confirmation, cancel preservation, confirmed reset"
+    ],
+    "errors": []
+  },
+  "touch_responsive": {
+    "passed": true,
+    "logs": [
+      "Touch D-pad moves player through actual touch events",
+      "Tablet TALK and touch Pointer Events dragging/check",
+      "Real speechSynthesis API invoked with English phrase; audible output not verified",
+      "Only three of eight map segments revealed",
+      "1366×768: 16:9, aligned, no page scrolling",
+      "1920×1080: 16:9, aligned, no page scrolling",
+      "1024×768: 16:9, aligned, no page scrolling",
+      "Sustained WASD cannot cross cabin furniture/wall",
+      "Outer hull boundary holds under sustained movement"
+    ],
+    "speechCalls": [
+      {
+        "text": "It's under the chair.",
+        "lang": "en-US",
+        "rate": 0.7799999713897705
+      },
+      {
+        "text": "It's under the chair.",
+        "lang": "en-US",
+        "rate": 0.7799999713897705
+      }
+    ],
+    "errors": []
+  },
+  "state_tests": "passed; 400 randomized mission sets",
+  "not_tested": [
+    "Safari",
+    "physical iPad/whiteboard",
+    "audible sound output",
+    "GitHub Pages deployment"
+  ],
+  "game_source_changes": []
+}

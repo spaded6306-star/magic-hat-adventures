@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#092e40"><meta name="description" content="Explore Pirate World with Magic Hat Girl. Eight English challenges, eight gems, one adventure.">
+  <title>Magic Hat Adventures · Where’s the Treasure?</title>
+  <link rel="icon" href="assets/characters/magic_hat_girl.png"><link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+<main id="app">
+  <header id="hud">
+    <div class="brand"><strong>MAGIC HAT ADVENTURES</strong><span>WHERE’S THE TREASURE?</span></div>
+    <button id="inventoryButton" aria-label="Open gems and treasure map"><span id="gemCount">GEMS: 0 / 8</span><span id="mapCount">MAP: 0 / 8</span></button>
+    <button id="routeButton">PLAY ORDER</button>
+    <button id="soundButton" aria-pressed="true">Sound: ON</button><button id="restartButton">Restart</button>
+  </header>
+  <section id="stage" aria-label="Pirate World game area">
+    <canvas id="world" width="1672" height="941" tabindex="0" aria-label="Pirate ship. Move with WASD or arrow keys. Approach crew and press E or Space to talk."></canvas>
+    <div id="missionHint">Meet the crew. Find the eight gems.</div>
+    <div id="proximity" hidden></div>
+    <div id="touchControls"><div id="dpad" aria-label="Movement controls">
+      <button data-dir="up" aria-label="Move up">▲</button><button data-dir="left" aria-label="Move left">◀</button><button data-dir="down" aria-label="Move down">▼</button><button data-dir="right" aria-label="Move right">▶</button>
+    </div><button id="interactButton" disabled>TALK</button></div>
+    <div id="overlay" role="dialog" aria-modal="true" aria-label="Adventure" tabindex="-1"><div class="loading"><h1>Magic Hat Adventures</h1><p id="loadingText">Preparing Pirate World…</p></div></div>
+    <div id="toast" role="status" aria-live="polite"></div>
+  </section>
+  <footer><span>MOVE · WASD / Arrow keys</span><span>TALK / OPEN · E / Space</span><span id="saveStatus">Progress saves on this device</span></footer>
+</main>
+<script src="js/data.js"></script><script src="js/state.js"></script><script src="js/assets.js"></script><script src="js/game.js"></script>
+</body></html>
