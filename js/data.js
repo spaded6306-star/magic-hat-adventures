@@ -36,9 +36,14 @@ MHA.DATA = {
 MHA.DATA.validPairs=MHA.DATA.prepositions.flatMap(prep=>(prep==='in'?['box','bag']:prep==='under'?['chair','table','desk']:MHA.DATA.nouns).map(noun=>({prep,noun})));
 MHA.shuffle=a=>{const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b};
 MHA.makeQuestions=(mission)=>{
- const pairs=MHA.shuffle(MHA.DATA.validPairs),nouns=MHA.shuffle(MHA.DATA.nouns);
+ const pairs=MHA.shuffle(mission.type==='drag'?MHA.DATA.validPairs.filter(p=>!(p.prep==='on'&&p.noun==='chair')):MHA.DATA.validPairs),nouns=MHA.shuffle(MHA.DATA.nouns);
  return Array.from({length:mission.count},(_,i)=>{
   const pair=pairs[i%pairs.length];
   return {...pair,noun:mission.type==='vocab'?nouns[i%6]:pair.noun};
  });
 };
+MHA.makeFinalChoices=q=>MHA.shuffle([q,
+ MHA.shuffle(MHA.DATA.validPairs.filter(p=>p.prep!==q.prep&&p.noun===q.noun))[0],
+ MHA.shuffle(MHA.DATA.validPairs.filter(p=>p.prep===q.prep&&p.noun!==q.noun))[0],
+ MHA.shuffle(MHA.DATA.validPairs.filter(p=>p.prep!==q.prep&&p.noun!==q.noun))[0]
+]);
